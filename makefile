@@ -6,7 +6,7 @@ GTEST_DIR = ./googletest/googletest
 TEST_FLAGS = -isystem $(GTEST_DIR)/include -pthread
 TEST_LIB = $(GTEST_DIR)/libgtest.a
 
-.PHONY = all build debug run test gTest runTests
+.PHONY = all build debug run test gTest 
 
 # runs the exe
 run: all
@@ -24,8 +24,6 @@ debug: all
 build:
 	@g++ -g -c *.cpp 2> $(LOG)
 
-# runs the unit tests:
-runTests: gTest build_test test
 
 test: build_test
 	@./$(EXE)
